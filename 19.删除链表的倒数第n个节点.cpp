@@ -51,22 +51,22 @@ public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* node = head;
         ListNode* node_pre = head;
-        for(int i = 0; i < n + 1; ++i){
-            if(node == NULL){
+        for(int i = 0; i < n + 1; ++i){ //遍历链表到n + 1，判断n是否大于链表长度
+            if(node == NULL){           //当n大于链表长度时，删除头节点
                 node = head;
                 head = head->next;
-                delete node;
+                //delete node;
                 return head;
             }
             node = node->next;
         }
-        while(node != NULL){
+        while(node != NULL){ //遍历从链表位置n + 1到链表末尾，
             node = node->next;
-            node_pre = node_pre->next;
+            node_pre = node_pre->next; //node_pre 向后移动 (max - n) 等于向前移动 max - (max - n)
         }
-        node = node_pre->next;
-        node_pre->next = node->next;
-        delete node;
+        node = node_pre->next; //跳过删除节点
+        node_pre->next = node->next; //等价于 node_pre->next = node_pre->next-next;
+        //delete node;
         return head;
     }
 };
