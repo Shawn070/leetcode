@@ -36,20 +36,20 @@ class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         if(lists.empty()) return nullptr;
-        while(lists.size() > 1) {
+        while(lists.size() > 1) {       //lists.size() == 0，时退出
             lists.push_back(mergeTwoLists(lists[0], lists[1]));
             lists.erase(lists.begin()); //删除lists[0]
             lists.erase(lists.begin()); //删除lists[1]
         }
-        return lists.front();
+        return lists.front();           //返回一个排序好的链表
     }
 private:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2){
-        if (l1 == nullptr) return l2;
+        if (l1 == nullptr) return l2; //为空链表则返回另一个链表
         if (l2 == nullptr) return l1;
         if (l1->val <= l2->val) {
-            l1->next = mergeTwoLists(l1->next, l2);
-            return l1;
+            l1->next = mergeTwoLists(l1->next, l2); //递归将两链表排序
+            return l1;                              //返回一个排序好的链表
         } else {
             l2->next = mergeTwoLists(l1, l2->next);
             return l2;
