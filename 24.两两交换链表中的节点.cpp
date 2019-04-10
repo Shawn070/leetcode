@@ -31,6 +31,14 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+/*
+   ---------------
+   |             |
+    → head →    next    → ......
+           |           |
+           -------------
+*/
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
@@ -39,7 +47,7 @@ public:
         }
         ListNode* next = head->next; //取下一个节点
         head->next = swapPairs(next->next); //将下下节点与下下下节点比较，并将排序好的链表连接到head后
-        next->next = head;
+        next->next = head;          //注意两个 ->next 的使用
         return next;
     }
 };
