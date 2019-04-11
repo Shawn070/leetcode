@@ -34,26 +34,16 @@
  * 
  * 
  */
+// Basic idea: a/b = e^(ln(a))/e^(ln(b)) = e^(ln(a)-ln(b))
 class Solution {
 public:
-    int strStr(string haystack, string needle) {
-        if (needle.size() == 0) return 0;
-        if (haystack.size() < needle.size()) return -1;
-        int j = 0;
-        int i = 0;
-        for (; i < haystack.size(); ++i) {
-            if (j == needle.size()) return i - needle.size();
-            if (haystack[i] == needle[j]) {
-                ++j;
-            } else {
-                i -= j;
-                j = 0;
-            }
-        }
-        if (j == needle.size()) {
-            return i - needle.size();
-        }
-        return -1;
+    int divide(int dividend, int divisor) {
+        if (dividend==0) return 0;
+        if (divisor==0) return INT_MAX;
+        long long res=double(exp(log(fabs(dividend))-log(fabs(divisor))));
+        if ((dividend<0)^(divisor<0)) res=-res; // ^：异或符号
+        if (res>INT_MAX) res=INT_MAX;
+        return res;
     }
 };
 
