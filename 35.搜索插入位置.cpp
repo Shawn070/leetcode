@@ -67,3 +67,6 @@ public:
         return l;
     }
 };
+
+// 差值
+mid = a[low] + (key - a[low]) / (a[high] - a[low]) * (high - low)
