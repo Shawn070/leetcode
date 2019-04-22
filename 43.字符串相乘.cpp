@@ -34,10 +34,14 @@
  * 
  */
 /*
- Compute the ones-digit, then the tens-digit, then the hundreds-digit,
- etc. For example when multiplying 1234 with 5678, the thousands-digit 
- of the product is 4\*5 + 3\*6 + 2\*7 + 1\*8 (plus what got carried 
- from the hundreds-digit).
+ 分别计算个位、十位、百位...
+ 例如：
+   1234
+ x 5678
+ 个位：4\*8
+ 十位：3\*8 + 4\*7 + 个位进位
+ 百位：2\*8 + 3\*7 + 4\*6 + 十位进位
+ ...
 */
 class Solution {
 public:
