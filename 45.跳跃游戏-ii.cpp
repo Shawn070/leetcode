@@ -18,7 +18,7 @@
 
 假设你总是可以到达数组的最后一个位置。
  */
-# 使用贪心算法，每次都选择可跳范围内能跳最远的那一步。
+// 使用贪心算法，每次都选择可跳范围内能跳最远的那一步。
 class Solution {
 public:
     int jump(vector<int>& nums) {
@@ -27,10 +27,10 @@ public:
         int nextReach = nums.at(0); // 下一步到达的地方
         int step = 0;               // 保存需要跳跃的步数
         for (int i = 0; i < nums.size() - 1; ++i) {
-            // 找能跳最远的步骤
+            // 在 i 到nextReach间寻找能跳最远下一跳的位置
             nextReach = max(i + nums.at(i), nextReach);
             
-            // 如果下一步到达的地方超过数组长度，则结
+            // 如果下一步到达的地方超过数组长度，则结束
             if (nextReach >= nums.size() - 1) {
                 return step + 1;
             }
