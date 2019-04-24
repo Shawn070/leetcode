@@ -17,6 +17,17 @@
 输出: false
 
  */
+
+/*
+isdigit(int c)//判断是否为数字
+isalpha(int c)//判断是否为a~z A~Z
+isalnum(int c)//判断是否是数字或a~z A~Z  
+
+头文件：#include <ctype.h>
+
+isalnum() 用来判断一个字符是否为英文字母或数字，相当于 isalpha(c) || isdigit(c)，其原型为：
+    int isalnum(int c);
+*/
 class Solution {
 public:
     bool isPalindrome(string s) {
