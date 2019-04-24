@@ -1,0 +1,5 @@
+﻿  00.cpp
+g:\github\temp\consoleapplication1\consoleapplication1\00.cpp(15): warning C4018: “<”: 有符号/无符号不匹配
+g:\github\temp\consoleapplication1\consoleapplication1\00.cpp(29): warning C4018: “<”: 有符号/无符号不匹配
+  ConsoleApplication1.vcxproj -> G:\GitHub\temp\ConsoleApplication1\Debug\ConsoleApplication1.exe
+  ConsoleApplication1.vcxproj -> G:\GitHub\temp\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Full PDB)
