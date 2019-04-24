@@ -43,19 +43,31 @@ public:
         int ret = 0;
         int upNum = 0;
         if(x == 0) return 0;
-        while(upNum == 0){
+        while(upNum == 0){  //去末尾0
             upNum = x % 10;
             x /= 10;
         }
         x = x*10 + upNum;
         while(x != 0){
             upNum = x % 10;
-            x /= 10;              
+            x /= 10;              // 下面：判断是否超出int范围，超出则返回0
             if(ret > INT_MAX/10 || (ret == INT_MAX) && upNum > 7) return 0;
             if(ret < INT_MIN/10 || (ret == INT_MIN) && upNum < -8) return 0;
-            ret = ret*10 + upNum;
+            ret = ret*10 + upNum; // 否则累加当前数 upNum
         }
         return ret;
     }
 };
 
+// 用long避免溢出问题
+class Solution {
+public:
+    int reverse(int x) {
+        long ret = 0;
+        while (x != 0) {
+            ret = ret * 10 + x % 10;
+            x /= 10;
+        }
+        return (ret > INT_MAX || ret < INT_MIN) ? 0 : ret;
+    }
+};
