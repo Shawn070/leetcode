@@ -37,16 +37,16 @@ class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
         if(strs.empty()) return "";
-        string res=strs[0];
-        for(int i=1; i<strs.size(); i++){
+        string res=strs[0]; // 取第一个字符串
+        for(int i=1; i<strs.size(); i++){   // 遍历后续字符串
             string temp;
-            for(int j=0; j<strs[i].size() && j<res.size(); j++){
+            for(int j=0; j<strs[i].size() && j<res.size(); j++){    // 遍历两字符串相同
                 if(res[j] == strs[i][j]){
                     temp.push_back(res[j]);
                 } 
                 else break;
             }
-            res = temp;
+            res = temp; // 更新前两个字符的最长公共前缀
         }
         return res;
     }
