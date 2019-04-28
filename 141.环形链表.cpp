@@ -41,7 +41,8 @@
  * };
  */
 
-// 思路：使用快慢指针，若指针相遇则判断有环
+// 思路1：使用快慢指针，若指针相遇则判断有环
+/*
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
@@ -56,4 +57,51 @@ public:
         }
         return false;
      }
+};
+*/
+
+// 思路2：利用set
+/* set介绍：
+set是一个储存元素的容器，其中每个元素最多只出现一次，元素遵循一个特
+定的顺序。元素一旦被放入次容器将不能被修改（修改元素的值），但是可以
+对元素进行插入和移除操作。set内部的元素遵循严格弱排序，因此在寻找元
+素的时候比unordered_map稍微慢一些，但是可以直接通过指针操作子分组，
+set是一个典型的二分搜索树的应用。
+
+常用操作：
+1.元素插入：myset.insert()
+2.中序遍历：类似vector遍历（用迭代器）
+3.反向遍历：利用反向迭代器reverse_iterator。
+    例：
+    set<int> s;
+    ......
+    set<int>::reverse_iterator rit;
+    for(rit=s.rbegin();rit!=s.rend();rit++)
+4.元素删除：与插入一样，可以高效的删除，并自动调整使红黑树平衡。
+            set<int> s;
+            s.erase(2);        //删除键值为2的元素
+            s.clear();
+5.元素检索：find()，若找到，返回该键值迭代器的位置，否则，返回最后一个元素后面一个位置。
+            set<int> s;
+            set<int>::iterator it;
+            it=s.find(5);    //查找键值为5的元素
+            if(it!=s.end())    //找到
+                cout<<*it<<endl;
+            else            //未找到
+                cout<<"未找到";
+*/
+
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        set<ListNode*> myset;
+        while(head){
+            if(myset.count(head)==0)
+                myset.insert(head);
+            else
+                return true;
+            head = head->next;
+        }
+        return false;
+    }
 };
