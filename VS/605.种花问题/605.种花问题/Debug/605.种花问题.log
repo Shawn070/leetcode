@@ -1,0 +1,6 @@
+﻿  源.cpp
+g:\github\leetcode\vs\605.种花问题\605.种花问题\源.cpp(13): warning C4018: “<”: 有符号/无符号不匹配
+g:\github\leetcode\vs\605.种花问题\605.种花问题\源.cpp(54): warning C4018: “<”: 有符号/无符号不匹配
+g:\github\leetcode\vs\605.种花问题\605.种花问题\源.cpp(68): warning C4018: “<”: 有符号/无符号不匹配
+  605.种花问题.vcxproj -> G:\GitHub\leetcode\VS\605.种花问题\Debug\605.种花问题.exe
+  605.种花问题.vcxproj -> G:\GitHub\leetcode\VS\605.种花问题\Debug\605.种花问题.pdb (Full PDB)
