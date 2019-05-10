@@ -1,6 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
+#include<string>
 using namespace std;
 
 class Solution {
@@ -23,6 +24,7 @@ public:
 int main() {
 	int m;
 	cin >> m;
+	vector<string> str;
 	while (m--) {
 		int n;
 		cin >> n;
@@ -36,17 +38,18 @@ int main() {
 		}
 
 		if (n <= 3 || 0 != sum % 4) {
-			cout << "no" << endl;
+			str.push_back("no");
 			continue;
 		}
 		Solution s;
 		sort(vec.begin(), vec.end());	//升序排序，贪心选择长的构建边
 		for (int i = 1; i < 3; i++) {	//只需判断是否构建出3条长为sum/4的边长
 			if (!s.DFS(vec, sum / 4))
-				cout << "no" << endl;
+				str.push_back("no");
 		}
-		cout << "yes" << endl;
+		str.push_back("yes");
 	}
-
+	for (int i = 0; i < str.size(); i++)
+		cout << str[i] << endl;
 	return 0;
 }
