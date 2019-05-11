@@ -1,5 +1,4 @@
 ﻿  源.cpp
-g:\github\leetcode\vs\square\square\源.cpp(11): warning C4018: “<”: 有符号/无符号不匹配
-g:\github\leetcode\vs\square\square\源.cpp(52): warning C4018: “<”: 有符号/无符号不匹配
+g:\github\leetcode\vs\square\square\源.cpp(12): warning C4018: “<”: 有符号/无符号不匹配
   square.vcxproj -> G:\GitHub\leetcode\VS\square\Debug\square.exe
   square.vcxproj -> G:\GitHub\leetcode\VS\square\Debug\square.pdb (Full PDB)
