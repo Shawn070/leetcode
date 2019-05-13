@@ -41,6 +41,17 @@ n = 15,
 string tmp = to_string(i);
 
 字符串——>字符：
+#include<cstring>
+
+①atoi()的参数是 const char* ,因此对于一个字符串str我们必
+须调用 c_str()的方法把这个string转换成 const char*类型的,
+而stoi()的参数是const string*,不需要转化为 const char*；
+
+②stoi()会做范围检查，默认范围是在int的范围内的，如果超出范
+围的话则会runtime error！
+而atoi()不会做范围检查，如果超出范围的话，超出上界，则输出
+上界，超出下界，则输出下界；
+
 stoi(); string 转换为int
 stol(); string 转换为long
 stoul(); string 转换为unsigned long
