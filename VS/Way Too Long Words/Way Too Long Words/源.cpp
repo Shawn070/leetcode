@@ -8,6 +8,7 @@ int main() {
 	char ch;
 	cin >> num;
 	cin >> ch;
+	vector<char> vec;
 	while (num--) {
 		string str;
 		getline(cin, str);

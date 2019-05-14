@@ -1,0 +1,4 @@
+﻿  源.cpp
+g:\github\leetcode\vs\杨辉三角\杨辉三角\源.cpp(14): warning C4018: “<”: 有符号/无符号不匹配
+  杨辉三角.vcxproj -> G:\GitHub\leetcode\VS\杨辉三角\Debug\杨辉三角.exe
+  杨辉三角.vcxproj -> G:\GitHub\leetcode\VS\杨辉三角\Debug\杨辉三角.pdb (Full PDB)
