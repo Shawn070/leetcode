@@ -23,6 +23,10 @@
 /*
 用map存放值到索引的哈希表，然后一一查找map中是否有相同的值，若有则判断索引差
 是否小于等于k，不是则修改map中的索引值。
+
+结合使用滑动窗口和查找表，不断查找当前滑动窗口内有没有重复值。我们通过建立一
+个 record 查找表，表中存的是窗口中的数，另外我们要注意的是，当窗口的大小
+ > k 的时候，我们要移除 record 中最左边的元素（保证我们窗口中有 <= k 个数）。
 */
 class Solution {
 public:
@@ -32,7 +36,7 @@ public:
  
         for (int i=0; i < nums.size(); i++) {
             if (um.count(nums[i])) {
-                if (i - um[nums[i]] < k)
+                if (i - um[nums[i]] <= k)
                     return true;
                 else
                     um[nums[i]] = i;
@@ -40,6 +44,7 @@ public:
                 um.insert(unordered_map<int, int>::value_type(nums[i], i));
             }
         }
+        return false;
     }
 };
 
