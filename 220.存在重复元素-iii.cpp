@@ -23,6 +23,8 @@
 
 /*
 思路：设置一个 k 大小的滑动窗口
+My idea is to preserve a sliding window containing nearest k numbers, 
+and check if next number collides to the numbers in the window.
 */
 class Solution {
 public:
@@ -36,7 +38,8 @@ public:
                 windows_deq.pop_front();
                 windows.erase(windows.find(num));
             }
-            auto it = windows.lower_bound((long)nums[i] - (long)t);
+            //返回指向大于（或等于）某值的第一个元素的迭代器
+            auto it = windows.lower_bound((long)nums[i] - (long)t); 
             if (it == windows.end() || *it > (long)nums[i] + (long)t) {
                 //没有找到
                 windows_deq.push_back(nums[i]);
