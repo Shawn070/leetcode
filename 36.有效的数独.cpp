@@ -74,12 +74,12 @@ class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
         map<char, int> row[9], col[9], blk[9]; //各9个map<char, int>，row[i][c]：i-第i个map，c为键，row[i][c]++为值+1
-        char c;
+        char c;                                //blk -> block块
         for (int i = 0; i < 9; i++){
             for (int j = 0; j < 9; j++) {
                 c = board[i][j];
                 if ((c != '.') && (0 < row[i][c]++ || 0 < col[j][c]++ || 0 < blk[i/3*3+j/3][c]++)) return false;
-            }   // i/3*3+j/3 = 0:8
+            }   // i/3*3+j/3 = 0:8，row, col，blk，中不能有重复的，所以一直不满足条件
         }
         return true;
     }

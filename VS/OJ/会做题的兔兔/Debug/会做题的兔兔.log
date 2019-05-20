@@ -1,3 +1,2 @@
-﻿  会做题的兔兔.cpp
-MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 _main，该符号在函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中被引用
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 _main，该符号在函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中被引用
 G:\GitHub\leetcode\VS\OJ\Debug\会做题的兔兔.exe : fatal error LNK1120: 1 个无法解析的外部命令

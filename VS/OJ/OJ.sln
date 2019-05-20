@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "会做题的兔兔", "会�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "电话号码的字母组合", "电话号码的字母组合\电话号码的字母组合.vcxproj", "{3E1C1E71-32D3-46E4-8BFB-E2EBE92E0C80}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "异位字符", "异为字符\异为字符.vcxproj", "{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{3E1C1E71-32D3-46E4-8BFB-E2EBE92E0C80}.Release|x64.Build.0 = Release|x64
 		{3E1C1E71-32D3-46E4-8BFB-E2EBE92E0C80}.Release|x86.ActiveCfg = Release|Win32
 		{3E1C1E71-32D3-46E4-8BFB-E2EBE92E0C80}.Release|x86.Build.0 = Release|Win32
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Debug|x64.ActiveCfg = Debug|x64
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Debug|x64.Build.0 = Debug|x64
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Debug|x86.ActiveCfg = Debug|Win32
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Debug|x86.Build.0 = Debug|Win32
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Release|x64.ActiveCfg = Release|x64
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Release|x64.Build.0 = Release|x64
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Release|x86.ActiveCfg = Release|Win32
+		{6F62146F-12F9-4993-9EEB-FE39CDBC1DB5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

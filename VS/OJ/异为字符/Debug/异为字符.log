@@ -1,0 +1,4 @@
+﻿  异位字符.cpp
+g:\github\leetcode\vs\oj\异为字符\异位字符.cpp(18): warning C4018: “<”: 有符号/无符号不匹配
+  异为字符.vcxproj -> G:\GitHub\leetcode\VS\OJ\Debug\异位字符.exe
+  异为字符.vcxproj -> G:\GitHub\leetcode\VS\OJ\Debug\异位字符.pdb (Full PDB)
