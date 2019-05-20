@@ -27,28 +27,57 @@
  * 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
  * 
  */
-class Solution {
+// class Solution {
+// public:
+//     vector<string> letterCombinations(string digits) {
+//         if(digits.length() == 0) return {};
+//         vector<string> res;
+//         for(int i=0; i < digits.length(); i++){
+//             int index = digits[i] - '0';
+//             if(!i){ //首次运行，i=0，把button[index]压入res vector
+//                 for(char c : button[index]) 
+//                     res.push_back(string(1, c));
+//             }else{
+//                 vector<string> tmp; //创建临时vector
+//                 for(string s:res){  //依次取出res，i>2时，res中的vector.string.length>2
+//                     for(char c:button[index]) 
+//                         tmp.push_back(s+string(1, c)); //将s+单个字符压入tmp
+//                 }
+//                 res = tmp;
+//             }
+//         }
+//         return res;
+//     }
+// private:
+//     vector<string> button{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+// };
+
+class Solution
+{
 public:
     vector<string> letterCombinations(string digits) {
-        if(digits.length() == 0) return {};
         vector<string> res;
-        for(int i=0; i < digits.length(); i++){
-            int index = digits[i] - '0';
-            if(!i){ //首次运行，i=0，把button[index]压入res vector
-                for(char c : button[index]) 
-                    res.push_back(string(1, c));
-            }else{
-                vector<string> tmp; //创建临时vector
-                for(string s:res){  //依次取出res，i>2时，res中的vector.string.length>2
-                    for(char c:button[index]) 
-                        tmp.push_back(s+string(1, c)); //将s+单个字符压入tmp
+        if (digits.empty()) return res;
+        res.push_back("");
+        string charmap[10] = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        for (int i=0; i < digits.length(); i++) {
+            vector<string> tmp;
+            string chars = charmap[digits[i] - '0'];
+            for (auto c : chars) {
+                for (auto s : res) {
+                    tmp.push_back(s + c);
                 }
-                res = tmp;
             }
+            // 交换顺序
+            // for (auto s : res) {
+            //     for (auto c : chars) {
+            //         tmp.push_back(s + c);
+            //     }
+            // }
+            res = tmp;
         }
         return res;
     }
-private:
-    vector<string> button{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 };
+
 
