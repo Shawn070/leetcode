@@ -31,4 +31,22 @@ Sample Output
 */
 
 #include <iostream>
-#include <algorithm>
+#pragma warning(disable:4996)
+using namespace std;
+
+int dp[1111111];
+int mod = 1000000007;
+
+int main() {
+	dp[1] = 1;
+	for (int i = 2; i <= 1000000; i++) {
+		if (i % 2)
+			dp[i] = dp[i - 1] % mod;
+		else
+			dp[i] = (dp[i / 2] + dp[i - 1]) % mod;
+	}
+	int digit;
+	while (scanf("%d", &digit) != EOF)printf("%d\n", dp[digit]);
+
+	return 0;
+}
