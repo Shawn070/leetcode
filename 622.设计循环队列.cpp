@@ -90,7 +90,7 @@ public:
     /** Get the last item from the queue. */
     int Rear() {
         if (isEmpty()) return -1;
-        else return s[(tail + 1 + max) % max];  //返回tail前的数
+        else return s[(tail + 1) % max];  //返回tail前的数
     }
     
     /** Checks whether the circular queue is empty or not. */
