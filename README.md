@@ -1,2 +1,5 @@
+<p align="center"><img width="100px" src="https://www.easyicon.net/api/resizeApi.php?id=1141865&size=128"></p>
+[![Badge]](https://img.shields.io/badge/Author-Shawn-brightgreen.svg)(http://shawn070.cn/)
+[![Badge]](https://img.shields.io/badge/coverage-11%25-blue.svg)(https://github.com/Shawn070/leetcode)
 # leetcode
 my leetcode solutions
