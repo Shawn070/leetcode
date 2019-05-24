@@ -17,12 +17,12 @@ public:
         stack<int> s;
         int tmp;
         for (int i = 0; i < T.size(); i++) {
-            while (!s.empty() && T[i] > T[s.top()]) {
+            while (!s.empty() && T[i] > T[s.top()]) {   //当前数比栈顶大
                 tmp = s.top();
                 s.pop();
-                res[tmp] = i - tmp;
+                res[tmp] = i - tmp;     //当前下标 - 栈顶下标
             }
-            s.push(i);
+            s.push(i);  //因为每个数都要判断，所以每个数的索引都要压入栈
         }
         return res;
     }
