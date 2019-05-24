@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "超级素数", "超级素�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3.无重复字符的最长子串", "无重复字符的最长子串\无重复字符的最长子串.vcxproj", "{6AE4A16C-3900-4607-AD3C-F9B94AD0D9FE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "150.逆波兰表达式求值", "150.逆波兰表达式求值\150.逆波兰表达式求值.vcxproj", "{0EAF809E-9B7B-4101-8EF2-579F35C5807B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{6AE4A16C-3900-4607-AD3C-F9B94AD0D9FE}.Release|x64.Build.0 = Release|x64
 		{6AE4A16C-3900-4607-AD3C-F9B94AD0D9FE}.Release|x86.ActiveCfg = Release|Win32
 		{6AE4A16C-3900-4607-AD3C-F9B94AD0D9FE}.Release|x86.Build.0 = Release|Win32
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Debug|x64.ActiveCfg = Debug|x64
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Debug|x64.Build.0 = Debug|x64
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Debug|x86.ActiveCfg = Debug|Win32
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Debug|x86.Build.0 = Debug|Win32
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Release|x64.ActiveCfg = Release|x64
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Release|x64.Build.0 = Release|x64
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Release|x86.ActiveCfg = Release|Win32
+		{0EAF809E-9B7B-4101-8EF2-579F35C5807B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
