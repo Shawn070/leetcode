@@ -35,6 +35,8 @@
 所有房间中的钥匙数量总计不超过 3000。
 
  */
+
+//DFS1:
 class Solution {
 public:
     bool visited[1000];
@@ -54,6 +56,31 @@ public:
             if (!visited[room[num][i]])
                 DFS(room[num][i]);
         }
+    }
+};
+
+//DFS2:
+class Solution {
+public:
+    bool canVisitAllRooms(vector<vector<int>>& rooms) {
+        vector<bool> flag(rooms.size(), 0);
+        flag[0] = true;
+        stack<vector<int>> s;
+        s.emplace(rooms[0]);
+        while(!s.empty()){
+            vector<int> temp = s.top();
+            s.pop();
+            int sz = temp.size();
+            for(auto i : temp){
+                if(!flag[i])
+                    s.emplace(rooms[i]);
+                flag[i]=true;
+            }
+        }
+        for(auto i : flag) 
+            if(i==false )
+                return false;
+        return true;
     }
 };
 
