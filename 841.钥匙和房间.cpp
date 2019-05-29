@@ -53,8 +53,8 @@ public:
     void DFS(int n) {
         visited[n] = true;
         for (int i=0; i < room[n].size(); i++) {
-            if (!visited[room[num][i]])
-                DFS(room[num][i]);
+            if (!visited[room[n][i]])
+                DFS(room[n][i]);
         }
     }
 };
