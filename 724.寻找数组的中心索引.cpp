@@ -32,14 +32,16 @@ nums 的长度范围为 [0, 10000]。
  */
 class Solution {
 public:
-	int pivotIndex(vector<int>& nums) {
-		int sumFront = 0;
-        int sum = accumulate(nums.begin(), nums.end(), 0);
-		for (int i = 0; i < nums.size(); i++) {
-            if (sumFront * 2 + nums[i] == sum) return i;
-			sumFront += nums[i];
-		}
-        return -1;
+	int dominantIndex(vector<int>& nums) {
+        if (nums.empty()) return -1;
+        if (nums.size() < 2) return 0;
+		vector<int> temp = nums;
+		sort(temp.begin(), temp.end(), greater<int>());
+        if (temp[0] == 0) return -1;
+		if (temp [1] != 0 && temp[0] / temp[1] < 2) 
+            return -1;
+        auto it = find(nums.begin(), nums.end(), temp[0]);
+		return distance(nums.begin(), it);
 	}
 };
 

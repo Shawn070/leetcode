@@ -1,5 +1,2 @@
-﻿  test_main.cpp
-g:\github\leetcode\vs\test\test\test_main.cpp(11): warning C4018: “<”: 有符号/无符号不匹配
-g:\github\leetcode\vs\test\test\test_main.cpp(16): warning C4715: “Solution::pivotIndex”: 不是所有的控件路径都返回值
-  test.vcxproj -> G:\GitHub\leetcode\VS\test\Debug\test.exe
+﻿  test.vcxproj -> G:\GitHub\leetcode\VS\test\Debug\test.exe
   test.vcxproj -> G:\GitHub\leetcode\VS\test\Debug\test.pdb (Full PDB)
