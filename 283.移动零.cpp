@@ -15,7 +15,6 @@
 尽量减少操作次数。
  */
 
-// 擦除
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
@@ -31,21 +30,4 @@ public:
     }
 };
 
-// 在原数组上操作，快慢指针
-class Solution {
-public:
-    int removeDuplicates(vector<int>& nums) {
-        int n = nums.size();
-        if (n == 0 || n ==1) return n;
-        int fast = 1;
-        int slow = 0;
-        for (; fast < n; fast++) {
-            if (nums[fast] != nums[slow]) {
-                slow++;
-                nums[slow] = nums[fast];
-            }
-        }
-        return slow + 1;
-    }
-};
 
