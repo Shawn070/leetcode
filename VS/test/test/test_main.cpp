@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include <algorithm>
 #include <numeric>	//accmulate
 #include <functional> //greater
