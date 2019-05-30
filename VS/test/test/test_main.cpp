@@ -8,19 +8,26 @@ using namespace std;
 
 class Solution {
 public:
-	int dominantIndex(vector<int>& nums) {
-		vector<int> temp = nums;
-		sort(temp.begin(), temp.end(), greater<int>());
-		if (temp[0] >= temp[1] * 2) {
-			auto it = find(nums.begin(), nums.end(), temp[0]);
-			return distance(nums.begin(), it);
+	string addBinary(string a, string b) {
+		if (a.length() < b.length())
+			swap(a, b);
+		int i = a.length(), j = b.length();
+		while (i--) {
+			if (j) 
+				a[i] += b[--j] & 1;
+				//µÈÓÚ a[i] += b[--j] - '0';
+			if (a[i] > '1') {
+				a[i] -= 2;
+				if (i) a[i - 1]++; else a = '1' + a;
+			}
 		}
-		return -1;
+		return a;
 	}
 };
 
 int main() {
-	vector<int> nums{ 0,0,0,1 };
-	cout << Solution().dominantIndex(nums) << endl;
+	string a("1010");
+	string b("1011");
+	cout << Solution().addBinary(a, b) << endl;
 	return 0;
 }
