@@ -34,14 +34,48 @@
  * 
  */
 
-// 这种题的意义在哪里？？？
+// class Solution {
+// public:
+//     int search(vector<int>& nums, int target) {
+//         for(int i = 0; i < nums.size(); i++){ 
+//             if(nums[i]==target) return i; 
+//         } 
+//         return -1; 
+//     }
+// };
+
+
+// class Solution {
+// public:
+//     int search(vector<int>& nums, int target) {
+//         auto it = find(nums.begin(), nums.end(), target);
+//         if (it == nums.end()) return -1;
+//         else return it - nums.begin();
+//     }
+// };
+
+
+/*
+nums[0] <= nums[mid],（0-mid不包含旋转）且nums[0] <= target <= nums[mid]时high向前规约；
+
+nums[mid] < nums[0]（0-mid包含旋转），target <= nums[mid] < nums[0]时向前规约（target在旋转位置到mid之间）
+
+nums[mid] < nums[0]，nums[mid] < nums[0] <= target时向前规约（target在0到旋转位置之间）
+
+其他情况向后规约 也就是说nums[mid] < nums[0]，nums[0] > target，target > nums[mid]三项均为真或者只有一项为真时向后规约。
+*/
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        for(int i = 0; i < nums.size(); i++){ 
-            if(nums[i]==target) return i; 
-        } 
-        return -1; 
+        int l = 0, r = nums.size() - 1;
+        int mid = 0;
+        while (l < r) {
+            mid = (l + r) / 2;
+            if ((nums[0] > target) ^ (nums[0] > nums[mid]) ^ (target > nums[mid])) 
+                l = mid + 1;
+            else 
+                r = mid;
+        }
+        return l == r && nums[l] == target ? l : -1;
     }
 };
-
