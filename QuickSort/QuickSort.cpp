@@ -16,10 +16,12 @@ int Partition(SqList *L, int low, int high) {
     int pivotkey;
     pivotkey = L->r[low];
     while(low < high) {
+        // 让基准左边的值全小于右边的值
         while(low < high && L->r[high] >= pivotkey) {
             high--;
         }
         swap(L, low, high);
+        // 让基准右边的值全大于左边的值
         while(low < high && L->r[low] <= pivotkey) {
             low++;
         }
@@ -29,7 +31,7 @@ int Partition(SqList *L, int low, int high) {
 }
 
 void QSort(SqList *L, int low, int high) {
-    int pivot;
+    int pivot;  //“基准”
     if(low < high) {
         pivot = Partition(L, low, high);
         QSort(L, low, pivot - 1);
