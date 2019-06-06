@@ -21,13 +21,13 @@ int findBest(int prices[], int vals[], int len, int total)
 {
 	//TODO write your code here
 	using namespace std;
-	std::map<float, int, greater<float>> M;
+	std::multimap<float, int, greater<float>> M;
 	for (int i = 0; i < len; i++) {
 		M.insert(pair<float, int>(float(vals[i]) / float(prices[i]), prices[i]));
 	}
 	int res = 0;
 	for (auto m : M) {
-		while (total / m.second != 0) {
+		if (total / m.second != 0) {
 			total -= m.second;
 			res += int(m.first * float(m.second));
 		}
