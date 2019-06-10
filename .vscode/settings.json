@@ -9,6 +9,8 @@
         "xutility": "cpp",
         "xiosbase": "cpp",
         "sstream": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "algorithm": "cpp",
+        "limits": "cpp"
     }
 }
