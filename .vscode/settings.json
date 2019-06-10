@@ -8,6 +8,7 @@
         "vector": "cpp",
         "xutility": "cpp",
         "xiosbase": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "utility": "cpp"
     }
 }

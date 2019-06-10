@@ -5,7 +5,8 @@
             "intelliSenseMode": "clang-x64",
             "compilerPath": "C:/MinGW/bin/g++.exe",
             "includePath": [
-                "${workspaceFolder}"
+                "${workspaceFolder}/**",
+                "C:/MinGW/include/**"
             ],
             "defines": [],
             "browse": {
