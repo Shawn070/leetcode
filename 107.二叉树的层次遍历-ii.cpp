@@ -32,7 +32,7 @@
  * };
  */
 
-/*
+
 // 思路1：层序遍历后翻转
 class Solution {
 public:
@@ -52,7 +52,7 @@ public:
         pre(root->right, depth + 1, ans);
     }
 };
-*/
+
 
 // 思路2：直接通过深度ans[level]倒序压入（顺序遍历，倒序压入）
 class Solution {

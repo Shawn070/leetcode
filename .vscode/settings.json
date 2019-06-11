@@ -11,6 +11,8 @@
         "sstream": "cpp",
         "utility": "cpp",
         "algorithm": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "stack": "cpp",
+        "deque": "cpp"
     }
 }

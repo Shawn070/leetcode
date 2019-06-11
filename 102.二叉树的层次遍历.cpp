@@ -71,8 +71,31 @@ public:
     }
 };
 
-/*
-// 思路2：递归前序遍历
+// 思路2：遍历每一层
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> ans;
+        if (!root) return ans;
+        queue<TreeNode*> q;
+        q.push(root);
+        while (!q.empty()) {
+            int size = q.size();
+            vector<int> row(size);
+            for (int i = 0; i < size; i++) {
+                TreeNode* t = q.front();
+                q.pop();
+                row[i] = t->val;
+                if (t->left) q.push(t->left);
+                if (t->right) q.push(t->right);
+            }
+            ans.push_back(row);
+        }
+        return ans;
+    }
+};
+
+// 思路3：递归前序遍历
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
@@ -90,4 +113,4 @@ public:
         pre(root->right, depth + 1, ans);
     }
 };
-*/
+
