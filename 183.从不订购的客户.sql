@@ -40,6 +40,6 @@ SELECT Name Customers FROM Customers C
 LEFT JOIN Orders O ON C.Id = O.CustomerId
 WHERE O.CustomerId IS NULL;
 
-
+-- 921 ms
 SELECT Name Customers FROM Customers
 WHERE Id NOT IN (SELECT CustomerId FROM Orders);
