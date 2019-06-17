@@ -43,3 +43,19 @@ public:
     }
 };
 
+
+class Solution {
+public:
+    ListNode* removeElements(ListNode* head, int val) {
+        ListNode *rootPre = new ListNode(0);
+        rootPre->next = head;
+        ListNode *cur = rootPre;
+        while (cur && cur->next) {
+            if (cur->next->val == val) 
+                cur->next = cur->next->next;
+            else
+                cur = cur->next;
+        }
+        return rootPre->next;
+    }
+};
