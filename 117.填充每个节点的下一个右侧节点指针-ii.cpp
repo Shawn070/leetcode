@@ -51,7 +51,7 @@ public:
 };
 */
 
-//层序遍历（未实现）
+//层序遍历
 class Solution {
 public:
     Node* connect(Node* root) {
@@ -60,10 +60,9 @@ public:
         q.push(root);
         while(!q.empty()) {
             int size = q.size();
-            Node* cur = q.front();
+            Node* cur = new Node(-1);
             Node* tmp;
-            q.pop();
-            for (int i = 1; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 cur->next = q.front();
                 cur = cur->next;
                 tmp = q.front();
@@ -71,7 +70,6 @@ public:
                 if (tmp->left) q.push(tmp->left);
                 if (tmp->right) q.push(tmp->right);
             }
-            cur->next = NULL;
         }
         return root;
     }
