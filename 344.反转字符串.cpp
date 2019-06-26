@@ -20,6 +20,8 @@
 输入：["H","a","n","n","a","h"]
 输出：["h","a","n","n","a","H"]
  */
+
+//遍历：（76 ms	15.1 MB）
 class Solution {
 public:
     void reverseString(vector<char>& s) {
@@ -31,3 +33,18 @@ public:
     }
 };
 
+//递归：（124 ms	20.2 MB）
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        if (s.empty()) return ;
+        reverse(s, 0, s.size()-1);
+    }
+    
+    void reverse(vector<char>& s, int start, int end) {
+        if (start > end)
+            return ;
+        reverse(s, start + 1, end - 1);
+        swap(s[start], s[end]);
+    }
+};
