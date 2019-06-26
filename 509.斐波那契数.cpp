@@ -33,6 +33,8 @@ F(N) = F(N - 1) + F(N - 2), 其中 N > 1.
 0 ≤ N ≤ 30
 
  */
+
+// 直接计算（8 ms	8.3 MB）
 class Solution {
 public:
     int fib(int N) {
@@ -45,6 +47,26 @@ public:
             swap(n1, n2);
         }
         return n2;
+    }
+};
+
+// 递归：避免重复计算（8 ms	8.5 MB）
+class Solution {
+public:
+    int fib(int N) {
+        map<int, int> m;
+        
+        return helper(N, m);
+    }
+    int helper(int N, map<int, int>& m) {
+        int res;
+        if (m.find(N) != m.end()) return m[N];
+        if (N < 2) 
+            res = N;
+        else 
+            res = helper(N-1, m) + helper(N-2, m);
+        m.insert(pair<int, int>(N, res));
+        return res;
     }
 };
 
