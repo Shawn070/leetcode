@@ -39,6 +39,8 @@
            |           |
            -------------
 */
+
+//递归：（12 ms	8.4 MB）
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
@@ -49,6 +51,21 @@ public:
         head->next = swapPairs(next->next); //将下下节点与下下下节点比较，并将排序好的链表连接到head后
         next->next = head;          //注意两个 ->next 的使用
         return next;
+    }
+};
+
+//遍历：（16 ms	8.7 MB）
+class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        ListNode* res = head;
+        ListNode* tmp;
+        while(head && head->next){
+            tmp = head;
+            head = head->next;
+            head->next = tmp;
+        }
+        return res;
     }
 };
 
