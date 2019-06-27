@@ -9,6 +9,8 @@
 #include <string.h>
 #include <map>
 #include <functional>
+#include <memory>
+#include <iostream>
 
 #pragma warning(disable : 4996)
 
@@ -37,6 +39,14 @@ int findBest(int prices[], int vals[], int len, int total)
 
 int main(void)
 {
+
+	int a[10];
+	int b[10] = {};
+	int c[10];
+	int *d = new int[10]();
+	memset(c, 0, sizeof(c));
+	std::cout << sizeof(c) << d[9];
+
 	int total = 0, vMax = 0, index = 0, i = 0;
 	int prices[ARRAY_MAX] = { 0 };
 	int vals[ARRAY_MAX] = { 0 };
