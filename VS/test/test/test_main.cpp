@@ -11,6 +11,7 @@
 #include <functional>
 #include <memory>
 #include <iostream>
+#include <bitset>
 
 #pragma warning(disable : 4996)
 
@@ -37,9 +38,20 @@ int findBest(int prices[], int vals[], int len, int total)
 	return res;
 }
 
+double myPow(double x, int n) {
+	std::bitset<32> bit(abs(double(n))); // 用 0 1 来存储需要乘的位置
+	double res = 1;     // 需要double(n)，当n=-2^31 (-2,147,483,648) 
+	for (int i = bit.size() - 1; i >= 0; i--) {
+		res *= res;
+		if (bit[i] == 1)
+			res *= x;
+	}
+	return (n > 0) ? res : 1 / res;
+}
+
 int main(void)
 {
-
+	int res = myPow(2, 10);
 	int a[10];
 	int b[10] = {};
 	int c[10];
