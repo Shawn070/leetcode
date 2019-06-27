@@ -29,13 +29,11 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+// 思路1：递归（24 ms	19.1 MB）
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        class Solution {
-public:
-    int maxDepth(TreeNode* root) {
-        // 思路1：递归
         //return root == NULL ? 0 : max(maxDepth(root->left), maxDepth(root->right)) + 1;
         
         // 
@@ -45,6 +43,27 @@ public:
         return (left > right) ? (left + 1) : (right + 1);
     }
 };
+
+// DFS：（12 ms	19.1 MB）
+class  Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if (!root) return 0;
+        queue<TreeNode*> q;
+        q.push(root);
+        int res = 0;
+        while (!q.empty()) {
+            res++;
+            int n = q.size();
+            for (int i = 0; i < n; i++) {
+                TreeNode* tmp = q.front();
+                q.pop();
+                if (tmp->left) q.push(tmp->left);
+                if (tmp->right) q.push(tmp->right);
+            }
+        }
+        return res;
     }
 };
+
 
