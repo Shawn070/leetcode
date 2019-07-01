@@ -13,6 +13,7 @@
         "algorithm": "cpp",
         "limits": "cpp",
         "stack": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "map": "cpp"
     }
 }
