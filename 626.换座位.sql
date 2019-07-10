@@ -36,7 +36,7 @@
 注意：
 
 如果学生人数是奇数，则不需要改变最后一个同学的座位。
-
+when id%2=1 and id=(select count(1) from seat) then id
 --
 -- [626] 换座位
 --
