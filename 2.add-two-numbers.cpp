@@ -38,28 +38,36 @@ class Solution
   public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
-        // ListNode *p1=l1, *p2=l2, *l3=NULL;
-        // ListNode *pre = NULL, *p3 = l3;
-        // int carried = 0;
+        ListNode *p1=l1, *p2=l2, *l3=NULL;
+        ListNode *pre = NULL, *p3 = l3;
+        int carried = 0;
         
-        // while(p1 || p2){
-        //     int a = p1 ? p1->val : 0;
-        //     int b = p2 ? p2->val : 0;
-        //     if(p1)
-        //         p1->val = (a + b + carried)%10;
-        //     else{
-        //         pre->next = new ListNode((a+b+carried)%10);
-        //         p1 = pre->next;
-        //     }
-        //     // p3 = new ListNode((a + b + carried)%10);
-        //     carried = (a+b+carried)/10;
-        //     pre = p1;
-        //     p1 = p1->next;
-        //     if(p2) p2 = p2->next;
-        // }
-        // pre->next = carried ? new ListNode(1) : NULL;
-        // return l1;
+        while(p1 || p2){
+            int a = p1 ? p1->val : 0;
+            int b = p2 ? p2->val : 0;
+            if(p1)
+                p1->val = (a + b + carried)%10;
+            else{
+                pre->next = new ListNode((a+b+carried)%10);
+                p1 = pre->next;
+            }
+            // p3 = new ListNode((a + b + carried)%10);
+            carried = (a+b+carried)/10;
+            pre = p1;
+            p1 = p1->next;
+            if(p2) p2 = p2->next;
+        }
+        pre->next = carried ? new ListNode(1) : NULL;
+        return l1;
+            }
+};
 
+// 68 ms
+class Solution
+{
+  public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+    {
         ListNode *result = new ListNode(0);
         ListNode *temp = result;
         int sum = 0;
@@ -80,5 +88,33 @@ class Solution
             temp->next = new ListNode(sum);
         }
         return result->next;
+    }
+};
+
+// 	68 ms
+class Solution
+{
+  public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+    {
+        int a, b, c = 0;
+        ListNode *l3 = NULL;
+        ListNode *tmp = l3;
+        while (l1 != NULL || l2 != NULL || c != 0) {
+            if (l1) {a = l1->val; l1 = l1->next;} else a = 0;
+            if (l2) {b = l2->val; l2 = l2->next;} else b = 0;
+            
+            ListNode *p = new ListNode(0);
+            p->val = (a + b + c) % 10;
+            c = (a + b + c) / 10;
+            
+            p->next = NULL;
+            if (l3 == NULL)
+                l3 = p;
+            else 
+                tmp->next = p;
+            tmp = p;
+        }
+        return l3;
     }
 };
