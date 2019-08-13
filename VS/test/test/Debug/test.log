@@ -1,6 +1,0 @@
-﻿  test_main.cpp
-g:\github\leetcode\vs\test\test\test_main.cpp(42): warning C4244: “参数”: 从“double”转换到“_ULonglong”，可能丢失数据
-g:\github\leetcode\vs\test\test\test_main.cpp(54): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-g:\github\leetcode\vs\test\test\test_main.cpp(55): warning C4101: “a”: 未引用的局部变量
-  test.vcxproj -> G:\GitHub\leetcode\VS\test\Debug\test.exe
-  test.vcxproj -> G:\GitHub\leetcode\VS\test\Debug\test.pdb (Full PDB)

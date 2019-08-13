@@ -1,0 +1,10 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a74b8474/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+SqList	QuickSort.cpp	/^struct SqList {$/;"	kind:s	line:4	file:	roles:def	end:7
+r	QuickSort.cpp	/^    int r[MAXSIZE + 1];$/;"	kind:m	line:5	scope:struct:SqList	typeref:typename:int[]	file:	roles:def
+length	QuickSort.cpp	/^    int length;$/;"	kind:m	line:6	scope:struct:SqList	typeref:typename:int	file:	roles:def

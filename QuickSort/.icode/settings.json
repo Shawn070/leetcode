@@ -1,0 +1,106 @@
+{
+    "compiler": {
+        "type": "GCC",
+        "prefix": "arm-none-eabi",
+        "path": "C:\\Program Files (x86)\\LiteOS Studio\\resources\\arm-none-eabi\\bin",
+        "make": {
+            "path": "C:\\Program Files (x86)\\LiteOS Studio\\resources\\msys\\1.0\\bin\\make.exe",
+            "script": null,
+            "args": null
+        },
+        "gcc": {
+            "path": null,
+            "optimze": "O2",
+            "cfiles": null,
+            "define": null,
+            "include": null,
+            "strictC": false,
+            "timeOptimize": false,
+            "C99Mode": true,
+            "ElfPerFunc": false,
+            "args": null
+        },
+        "asm": {
+            "path": null,
+            "asmfiles": null,
+            "define": null,
+            "include": null,
+            "args": null,
+            "readOnly": false,
+            "readWrite": false,
+            "thumbMode": false
+        },
+        "linker": {
+            "path": null,
+            "robase": null,
+            "rwbase": null,
+            "script": null,
+            "args": null
+        },
+        "gdbPath": "C:\\Program Files (x86)\\LiteOS Studio\\resources\\arm-none-eabi\\bin"
+    },
+    "general": {
+        "projectName": "QuickSort",
+        "activeFilePath": "/QuickSort.cpp"
+    },
+    "output": {
+        "name": "",
+        "path": ".\\",
+        "assmableFile": "",
+        "files": [
+            "bin",
+            "map",
+            "elf"
+        ],
+        "pwd": ""
+    },
+    "target": {
+        "UUID": "96e9b366-8a40-47ee-94fe-9bdd7784ce90",
+        "flag": "0",
+        "factory": "ST",
+        "boardName": "STM32F429IG",
+        "productNumber": "STM32F429IG",
+        "core": "Cortex-M4",
+        "numberCores": 1,
+        "flashSize": "1024KB",
+        "romAddress": "0x8000000",
+        "ramSize": "256KB",
+        "ramAddress": "0x20000000",
+        "restartAddress": "",
+        "featuresAddress": "https://www.st.com/content/st_com/en/products/microcontrollers/stm32-32-bit-arm-cortex-mcus/stm32-high-performance-mcus/stm32f4-series/stm32f429-439/stm32f429ag.html#samplebuy-scroll",
+        "dataSheetAddress": "https://www.st.com/resource/en/datasheet/stm32f429ag.pdf"
+    },
+    "debugger": {
+        "type": "JLink",
+        "interface": "SWD",
+        "jlink": {
+            "interface": "SWD",
+            "port": "USB",
+            "speed": "8000",
+            "path": ""
+        },
+        "initType": "reset",
+        "initFile": ".icode\\default.gdbinit",
+        "gdbPath": "C:\\Program Files (x86)\\LiteOS Studio\\resources\\arm-none-eabi\\bin"
+    },
+    "burner": {
+        "type": "JLink",
+        "speed": "8000",
+        "interface": "SWD",
+        "flashAddress": "",
+        "loadAddress": "0x08000000",
+        "path": "",
+        "erase": true,
+        "check": true
+    },
+    "serialPort": {
+        "port": "",
+        "baudRate": "115200",
+        "dataBit": 8,
+        "stopBit": 1,
+        "parity": "None",
+        "flowControl": "None",
+        "logPath": "C:\\Users\\30788\\.icode\\temp\\serial-log"
+    },
+    "version": "0.3.1"
+}

@@ -46,6 +46,7 @@
 如果是偶数1,奇数0 -> flags。
 */
 
+//44 ms	10 MB
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
@@ -80,10 +81,41 @@ public:
     }
 };
 
+//思路2：nums1和nums2分别往中间靠近，每次移动两个数
+//28 ms	9.6 MB
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-    
+        int i = 0, j = nums1.size() - 1, m = 0, n = nums2.size() - 1;
+        while (i <= j && m <= n ) {
+            if (i == j && m == n) { //中位数在两数中间
+                return float(nums1[i] + nums2[m]) / 2;
+            }
+            if (nums1[i] <= nums2[m])
+                i++;
+            else
+                m++;
+            if (nums1[j] >= nums2[n])
+                j--;
+            else
+                n--;
+        }
+        if (i <= j) {   //中位数在nums1中
+            while (i + 1 < j) {
+                i++;
+                j--;
+            }
+            return float(nums1[i] + nums1[j]) / 2;
+        }
+        else if (m <= n) {//中位数在nums2中
+            while (m + 1 < n) {
+                m++;
+                n--;
+            }
+            return float(nums2[m] + nums2[n]) / 2;
+        }
+        return 0;
     }
 };
+
 

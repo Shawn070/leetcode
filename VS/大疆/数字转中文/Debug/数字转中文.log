@@ -1,0 +1,5 @@
+﻿  num2ch.cpp
+c:\users\30788\desktop\temp\大疆\数字转中文\num2ch.cpp(38): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\30788\desktop\temp\大疆\数字转中文\num2ch.cpp(64): warning C4018: “>”: 有符号/无符号不匹配
+  数字转中文.vcxproj -> C:\Users\30788\Desktop\temp\大疆\Debug\数字转中文.exe
+  数字转中文.vcxproj -> C:\Users\30788\Desktop\temp\大疆\Debug\数字转中文.pdb (Full PDB)
