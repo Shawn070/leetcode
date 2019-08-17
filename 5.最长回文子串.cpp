@@ -28,6 +28,7 @@
  * 
  */
 
+//32 ms	9.4 MB
 class Solution
 {
   public:
@@ -39,7 +40,8 @@ class Solution
             return s;
         }
         for (int i = 0; i < slen; i++)
-        {
+        {   //点睛之笔
+            if (slen - i  < maxlen / 2) break;  //12 ms	8.6 MB
             // 奇数字符串 例如：qdcbabcdp  qdcb ⬅[a]➡ bcdp, [a]:i
             int j = 0;
             while (i - j >= 0 && i + j <= slen && s[i - j] == s[i + j])
@@ -51,48 +53,41 @@ class Solution
             }
 
             // 偶数字符串 例如：qcbaabcp    qcb ⬅[a][a]➡ bcp, [a]:i
-            if(s[i] == s[i+1]){ 
-            j = 0;
-            while (i - j >= 0 && i + j <= slen && s[i - j] == s[i + j + 1])
-                j++;
-            if (2 * j> maxlen)
-            {
-                maxlen = 2 * j;
-                pos = i - j + 1; 
-            }
+            if(s[i] == s[i+1]){             
+                j = 0;
+                while (i - j >= 0 && i + j <= slen && s[i - j] == s[i + j + 1])
+                    j++;
+                if (2 * j> maxlen)
+                {
+                    maxlen = 2 * j;
+                    pos = i - j + 1; 
+                }
             }
         }
         return s.substr(pos, maxlen);
+    }
+};
 
-        // int len = s.length();
-        // if (len == 1 || len == 0)
-        //     return s;
-        // int max_len = 1, start = -1;    // 最长回文string的起始位置，max_len是最长回文长度
-        // for (int i = 0; i < len; i++)
-        // {
-        //     int l = i - 1, r = i + 1;       // left, right
-        //     // 把一个字符作为中心
-        //     while (l >= 0 && r <= len - 1 && s[l] == s[r]){ --l; ++r; }
-        //     if (r - l - 1 > max_len)
-        //     {
-        //         max_len = r - l - 1;
-        //         start = l + 1;
-        //     }
 
-        //     if (i != len - 1 && s[i] == s[i + 1])
-        //     {
-        //         l = i - 1, r = i + 2;
-        //         // 两个相同字符作为中心
-        //         while (l >= 0 && r <= len - 1 && s[l] == s[r]){ --l; ++r; }
-        //         if (r - l - 1 > max_len)
-        //         {
-        //             max_len = r - l - 1;
-        //             start = l + 1;
-        //         }
-        //     }
-        // }
-        // if(start == -1)     // 当没有回文子串的时候，随便返回一个就行，为保证不会越界，返回第一个就行
-        //     return string() + s[0];
-        // return s.substr(start, max_len);
+//8 ms	8.6 MB
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        if (s.size() < 2) return s;
+        int len = s.size(), maxLen = 0, start = 0;
+        for (int i = 0; i < len;) {
+            if (len - i < maxLen / 2) break;
+            int left = i, right = i;
+            while (right < len - 1 && s[right] == s[right + 1]) ++right;
+            i = right + 1;
+            while (left > 0 && right < len && s[left - 1] == s[right + 1]) {
+                left--; right++;
+            }
+            if (maxLen < right - left + 1) {
+                maxLen = right - left + 1;
+                start = left;
+            }
+        }
+        return s.substr(start, maxLen);
     }
 };
