@@ -27,6 +27,7 @@
  * 
  * 
  */
+
 class Solution
 {
   public:
@@ -39,7 +40,7 @@ class Solution
         }
         for (int i = 0; i < slen; i++)
         {
-            // 奇数字符串
+            // 奇数字符串 例如：qdcbabcdp  qdcb ⬅[a]➡ bcdp, [a]:i
             int j = 0;
             while (i - j >= 0 && i + j <= slen && s[i - j] == s[i + j])
                 j++;
@@ -49,7 +50,7 @@ class Solution
                 pos =  i - j + 1;
             }
 
-            // 偶数字符串
+            // 偶数字符串 例如：qcbaabcp    qcb ⬅[a][a]➡ bcp, [a]:i
             if(s[i] == s[i+1]){ 
             j = 0;
             while (i - j >= 0 && i + j <= slen && s[i - j] == s[i + j + 1])
