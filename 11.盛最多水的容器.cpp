@@ -28,15 +28,31 @@
  * 输出: 49
  * 
  */
+
+// 	28 ms	9.8 MB
 class Solution {
 public:
     int maxArea(vector<int>& a) {
         int max = 0;
-        for(int i=0, j=a.size() - 1; i<j; ){
-            int minHeight = a[i] < a[j] ? a[i++] : a[j--];
-            max = max > (j-i+1)*minHeight ? max : (j-i+1)*minHeight;
+        int i = 0, j = a.size() - 1;
+        while (i < j) {
+            int minheight = a[i] < a[j] ? a[i++] : a[j--];
+            max = max > (j - i + 1) * minheight ? max : (j - i + 1) * minheight;
         }
         return max;
     }
 };
 
+// 28 ms	9.8 MB
+class Solution {
+public:
+    int maxArea(vector<int>& a) {
+        int maxs = 0;
+        int i = 0, j = a.size() - 1;
+        while (i < j) {
+            maxs = max(maxs, (j - i) * min(a[i], a[j]));
+            a[i] < a[j] ? i++ : j--;
+        }
+        return maxs;
+    }
+};
