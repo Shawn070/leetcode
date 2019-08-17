@@ -44,6 +44,17 @@
  * T     S     G
  * 
  */
+
+// 思路一：按行访问 40 ms	16.9 MB
+/*
+首先访问 行 0 中的所有字符，接着访问 行 1，然后 行 2，依此类推...
+
+对于所有整数 k，
+
+行 0 中的字符位于索引 k(2⋅numRows−2) 处;
+行 numRows−1 中的字符位于索引 k(2⋅numRows−2)+numRows−1 处;
+内部的 行 i 中的字符位于索引 k(2⋅numRows−2)+i 以及 (k+1)(2⋅numRows−2)−i 处
+*/
 class Solution {
 public:
     string convert(string s, int numRows) {
@@ -59,6 +70,31 @@ public:
                 }
             }
         }
+        return ret;
+    }
+};
+
+
+//思路二：上下翻折法 12 ms	12.7 MB
+class Solution {
+public:
+    string convert(string s, int numRows) {
+        if (numRows == 1) return s;
+
+        vector<string> rows(min(numRows, int(s.size()))); //防止 s 长度小于 numRows
+        int curRow = 0;
+        bool goingDown = false;
+
+        for (char c : s) {
+            rows[curRow] += c;
+            if (curRow == 0 || curRow == numRows - 1)   //在 0 和 numRows - 1 处翻转方向
+                goingDown = !goingDown;
+            curRow += goingDown ? 1 : -1;
+        }
+
+        string ret;
+        for (string row : rows)
+            ret += row;
         return ret;
     }
 };
