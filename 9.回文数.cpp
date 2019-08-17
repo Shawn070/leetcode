@@ -38,16 +38,18 @@
  * 你能不将整数转为字符串来解决这个问题吗？
  * 
  */
+
+// 	36 ms	8 MB
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if(x<0) return false;
+        if(x < 0) return false;
         if(x < 10) return true;
         int count = 1;
         int tempx = x;
         int m = 0, n=0;
         while(tempx/=10) ++count;
-        for( ; count>1; ){
+        while(count>1){
             m = x/pow(10, --count);
             n = x%10;
             if(m != n) return false;
@@ -59,3 +61,18 @@ public:
     }
 };
 
+// 16 ms	8.1 MB
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x < 0 || x != 0 && x % 10 == 0) 
+            return 0;
+        
+        int res=0;
+        while (x > res) {
+            res = res * 10 + x % 10;
+            x /= 10;
+        }
+        return res == x || res / 10 == x;
+    }
+};
