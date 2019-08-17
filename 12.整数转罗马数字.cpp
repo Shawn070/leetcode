@@ -69,15 +69,14 @@
 // 24 ms	8.1 MB
 class Solution {
 public:
-    int romanToInt(string s) {
+    string intToRoman(int num) {
         int val[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         string romanVal[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-        int res=0;
-        while(s.length() !=  0)
+        string res;
         for(int i=0; i<13; i++){
-            while(s.substr(0,1)==romanVal[i] || s.substr(0,2)==romanVal[i]&&s.length()>0){
-                s.substr(0,1)==romanVal[i] ? s = s.substr(1,s.length()) : s = s.substr(2,s.length());
-                res += val[i];
+            while(num>=val[i]){
+                num -= val[i];
+                res += romanVal[i];
             }
         }
         return res;

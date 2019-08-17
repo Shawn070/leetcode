@@ -65,10 +65,46 @@
  * 解释: M = 1000, CM = 900, XC = 90, IV = 4.
  * 
  */
+
+// 48 ms	8.3 MB
 class Solution {
 public:
     int romanToInt(string s) {
-        
+        int val[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        string romanVal[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int res=0;
+        while(s.length() !=  0)
+        for(int i=0; i<13; i++){
+            while(s.substr(0,1)==romanVal[i] || s.substr(0,2)==romanVal[i]&&s.length()>0){
+                s.substr(0,1)==romanVal[i] ? s = s.substr(1,s.length()) : s = s.substr(2,s.length());
+                res += val[i];
+            }
+        }
+        return res;
     }
 };
 
+// 12 ms	8.4 MB
+class Solution {
+public:
+    int romanToInt(string s) {
+        int sum = 0;
+        int len = s.size();
+        int num[26] = {0};
+        num['M'-'A'] = 1000;
+        num['D'-'A'] = 500;
+        num['C'-'A'] = 100;
+        num['L'-'A'] = 50;
+        num['X'-'A'] = 10;
+        num['V'-'A'] = 5;
+        num['I'-'A'] = 1;
+        for (int i = 0; i < len - 1; i++) {
+            if (num[s[i] - 'A'] >= num[s[i + 1] - 'A'])
+                sum += num[s[i] - 'A'];
+            else
+                sum -= num[s[i] - 'A'];
+        }
+        sum += num[s[len - 1] - 'A'];
+        return sum;
+    }
+};
