@@ -65,6 +65,8 @@
  * 解释: M = 1000, CM = 900, XC = 90, IV = 4.
  * 
  */
+
+// 24 ms	8.1 MB
 class Solution {
 public:
     int romanToInt(string s) {
@@ -82,3 +84,33 @@ public:
     }
 };
 
+// 12 ms	8.4 MB
+class Solution {
+public:
+    string intToRoman(int num) {
+        string res = "";
+        res += digits(" ", " ", "M", num / 1000);
+        res += digits("M", "D", "C", num % 1000 / 100);
+        res += digits("C", "L", "X", num % 100 / 10);
+        res += digits("X", "V", "I", num % 10);
+        return res;
+    }
+    
+    string digits(string large, string mid, string small, int n) {
+        string res = "";
+        if (n <= 3) {
+            for (int i = 0; i < n; i++) 
+                res += small;
+        }
+        else if (n == 4)
+            res = small + mid;
+        else if (n <= 8) {
+            res = mid;
+            for (int i = 0; i < n - 5; i++) 
+                res += small;
+        }
+        else 
+            res = small + large;
+        return res;
+    }
+};
