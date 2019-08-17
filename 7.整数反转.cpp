@@ -37,29 +37,27 @@
  * 0。
  * 
  */
+// 提前判断退出 8 ms	8.2 MB
+// INT_MAX =  2147483647 
+// INT_MIN = -2147483648
 class Solution {
 public:
     int reverse(int x) {
-        int ret = 0;
-        int upNum = 0;
-        if(x == 0) return 0;
-        while(upNum == 0){  //去末尾0
-            upNum = x % 10;
+        int preNum = 0;
+        while (x != 0) {
+            int temp = x % 10;
             x /= 10;
+            if (preNum > INT_MAX / 10 || (preNum == INT_MAX / 10 && temp > 7))
+                return 0;
+            if (preNum < INT_MIN / 10 || (preNum == INT_MIN / 10 && temp < -8))
+                return 0;
+            preNum = preNum * 10 + temp;
         }
-        x = x*10 + upNum;
-        while(x != 0){
-            upNum = x % 10;
-            x /= 10;              // 下面：判断是否超出int范围，超出则返回0
-            if(ret > INT_MAX/10 || (ret == INT_MAX) && upNum > 7) return 0;
-            if(ret < INT_MIN/10 || (ret == INT_MIN) && upNum < -8) return 0;
-            ret = ret*10 + upNum; // 否则累加当前数 upNum
-        }
-        return ret;
+        return preNum;
     }
 };
 
-// 用long避免溢出问题
+// 用long避免溢出问题 12 ms	8.1 MB
 class Solution {
 public:
     int reverse(int x) {
