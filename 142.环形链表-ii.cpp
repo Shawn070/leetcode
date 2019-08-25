@@ -54,7 +54,7 @@ AB = DB -----(4)
 会在B点相遇，而B点也正是我们想要的相遇点
 */
 
-/*
+/* 方法一：	12 ms	9.8 MB
 大致思路：
 1. 从head分别以 单步 和 双步 的速度向前走；
 2. 在环中间相遇；
@@ -70,20 +70,40 @@ public:
         while (fast != NULL && fast->next != NULL) {
             fast = fast->next->next;
             slow = slow->next;
-            if (fast && fast == slow) {
-                isCircle = true;
-                break;
+            if (fast == slow) { // D -> B = A -> B
+                slow = head;
+                while (fast != slow) {
+                    fast = fast->next;
+                    slow = slow->next;
+                }
+                return fast;
             }
-        }
-        if (isCircle) {     // D -> B = A -> B
-            fast = head;
-            while (fast != slow) {
-                fast = fast->next;
-                slow = slow->next;
-            }
-            return fast;
         }
         return NULL;
     }
 };
 
+
+/* 方法二：	28 ms	12.1 MB
+利用set
+set介绍：
+set是一个储存元素的容器，其中每个元素最多只出现一次，元素遵循一个特
+定的顺序。元素一旦被放入次容器将不能被修改（修改元素的值），但是可以
+对元素进行插入和移除操作。set内部的元素遵循严格弱排序，因此在寻找元
+素的时候比unordered_map稍微慢一些，但是可以直接通过指针操作子分组，
+set是一个典型的二分搜索树的应用。
+*/
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        set<ListNode *> myset;
+        while (head) {
+            if (myset.count(head) == 0) 
+                myset.insert(head);
+            else
+                return head;
+            head = head->next;
+        }
+        return NULL;
+    }
+};
