@@ -20,6 +20,8 @@
  * 
  * 
  */
+
+// 20 ms	8.7 MB
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
@@ -41,3 +43,30 @@ public:
     }
 };
 
+
+// 16 ms	8.8 MB
+class Solution {
+public:
+    int threeSumClosest(vector<int>& nums, int target) {
+        sort(nums.begin(), nums.end());
+        int len = nums.size();
+        int sum = 0;
+        int ins = INT_MAX;
+        for (int i = 0; i < len; i++) {
+            int l = i + 1;
+            int r = len - 1;
+            while (l < r) {
+                int val = nums[i] + nums[l] + nums[r];
+                int n = abs(val - target);
+                if (n < ins) {
+                    sum = val;
+                    ins = n;
+                }
+                if (val == target) return sum;
+                if (val < target) l++;
+                if (val > target) r--;
+            }
+        }
+        return sum;
+    }
+};

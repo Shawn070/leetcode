@@ -53,6 +53,14 @@ AB = DB -----(4)
 一个新指针从A起始点用同样速度 开始走，两个指针将
 会在B点相遇，而B点也正是我们想要的相遇点
 */
+
+/*
+大致思路：
+1. 从head分别以 单步 和 双步 的速度向前走；
+2. 在环中间相遇；
+3. 分别从 相遇点 和 head 以单步速度向前走；
+4. 在入环结点相遇。
+*/
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
@@ -67,7 +75,7 @@ public:
                 break;
             }
         }
-        if (isCircle) {
+        if (isCircle) {     // D -> B = A -> B
             fast = head;
             while (fast != slow) {
                 fast = fast->next;
