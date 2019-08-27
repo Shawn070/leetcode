@@ -17,5 +17,6 @@
         "map": "cpp",
         "bitset": "cpp",
         "xtree": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

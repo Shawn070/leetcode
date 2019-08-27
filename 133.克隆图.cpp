@@ -46,7 +46,7 @@ public:
 };
 */
 
-//DFS
+//DFS   40 ms	16.7 MB
 class Solution {
 public:
     Node* cloneGraph(Node* node) {
@@ -61,11 +61,11 @@ public:
         }
         return copies[node];
     }
-    private:
+private:
     unordered_map<Node *, Node *> copies; // <curNode, nextNode>
 };
 
-//BFS(未看)
+//BFS(未看) 	40 ms	16.3 MB
 class Solution {
 public:
     Node* cloneGraph(Node* node) {
