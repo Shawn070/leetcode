@@ -27,6 +27,8 @@
 保证返回的最终结果为32位整数。
 
  */
+
+//DFS:  1676 ms	8.4 MB
 class Solution {
 public:
     int findTargetSumWays(vector<int>& nums, int S) {
@@ -39,3 +41,28 @@ public:
     }
 };
 
+//动态规划：	4 ms	8.4 MB
+/*
+思想：在某个解中正数和为x，负数和的绝对值为y，则x+y=sum，x-y=S，解得x=(sum+S)/2
+*/
+class Solution {
+public:
+    int findTargetSumWays(vector<int>& nums, int S) {
+        int sum = 0;
+        for (auto num : nums) {
+            sum += num;
+        }
+        if (sum < S || (sum + S) % 2) {
+            return false;
+        }
+        int w = (sum + S) / 2;
+        int dp[w + 1] = {0};
+        dp[0] = 1;
+        for (int num : nums) {
+            for (int i = w; i >= num; i--) {
+                dp[i] = dp[i] + dp[i - num];
+            }
+        }
+        return dp[w];
+    }
+};
