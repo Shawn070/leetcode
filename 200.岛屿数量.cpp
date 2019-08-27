@@ -25,7 +25,7 @@
 输出: 3
 
  */
-//DFS: 擦除所有连接的‘1’
+//DFS: 擦除所有连接的‘1’ 16 ms	11.3 MB
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
@@ -53,7 +53,7 @@ private:
     }
 };
 
-//BFS: 广度优先搜索
+//BFS: 广度优先搜索 20 ms	11.2 MB
 /*
 广度优先搜索类似于树的层次遍历过程。它需要借助一个队列来实现。
 1.准备工作：创建一个visited数组，用来记录已被访问过的顶点；创建一个队列，用来存放每一层的顶点；初始化图G。

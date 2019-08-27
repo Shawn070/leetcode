@@ -35,6 +35,7 @@
 = 22
 
  */
+// 方法一： 36 ms	11.8 MB
 class Solution {
 public:
 	int evalRPN(vector<string>& tokens) {
@@ -78,3 +79,34 @@ public:
 	}
 };
 
+
+// 方法二：递归 24 ms	15.9 MB
+class Solution {
+public:
+	int evalRPN(vector<string>& tokens) {
+		auto temp = tokens.back();
+        tokens.pop_back();
+        
+        if (!isCalc(temp)) {
+            return stoi(temp);
+        } else {
+            int y = evalRPN(tokens);
+            int x = evalRPN(tokens);
+            if (temp[0] == '+') {
+                return x + y;
+            } else if (temp[0] == '-') {
+                return x - y;
+            } else if (temp[0] == '*') {
+                return x * y;
+            } else if (temp[0] == '/') {
+                return x / y;
+            } else {
+                return 0;
+            }
+        }
+	}
+    
+    bool isCalc(string s) {
+        return s.size() == 1 && (s[0] == '+' || s[0] == '-' || s[0] == '*' || s[0] == '/');
+    }
+};
