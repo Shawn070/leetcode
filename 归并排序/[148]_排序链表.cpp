@@ -11,13 +11,12 @@ struct ListNode {
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
-        if (head == NULL || head->next == NULL)
-            return head;
-
+        if (head || head->next) return head;
+        //快慢指针
         ListNode* slow = head;
         ListNode* fast = head->next;
 
-        while (fast != NULL && fast->next != NULL) {
+        while (fast && fast->next) {
             slow = slow->next;
             fast = fast->next->next;
         }
@@ -28,11 +27,26 @@ public:
         return merge(sortList(head), sortList(fast));
     }
 
+    //递归实现
+    ListNode* merge2(ListNode* l1, ListNode* l2) {
+        if (l1 == nullptr) return l2;
+        if (l2 == nullptr) return l1;
+
+        if (l1->val <= l2->val) {
+            l1->next = merge2(l1->next, l2);
+            return l1;
+        } else {
+            l2->next = merge2(l1, l2->next);
+            return l2;
+        }
+    }
+
+    //非递归实现
     ListNode* merge(ListNode* l1, ListNode* l2) {
         ListNode dump(0);
         ListNode* cur = &dump;
 
-        while (l1 != NULL && l2 != NULL) {
+        while (l1 && l2) {
             if (l1->val < l2->val) {
                 cur->next = l1;
                 l1 = l1->next;
@@ -43,7 +57,7 @@ public:
             }
             cur = cur->next;
         }
-        if (l1 != NULL)
+        if (l1)
             cur->next = l1;
         else
             cur->next = l2;
