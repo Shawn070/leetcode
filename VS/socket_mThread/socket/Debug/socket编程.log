@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (socket编程.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  client.cpp
+server.obj : error LNK2005: _main 已经在 client.obj 中定义
+G:\GitHub\leetcode\VS\网络&多线程\Debug\socket.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

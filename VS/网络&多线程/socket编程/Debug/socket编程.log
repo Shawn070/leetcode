@@ -1,7 +1,0 @@
-﻿  server.cpp
-g:\github\leetcode\vs\网络&多线程\socket编程\server.cpp(17): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850): note: 参见“inet_addr”的声明
-  client.cpp
-g:\github\leetcode\vs\网络&多线程\socket编程\client.cpp(18): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850): note: 参见“inet_addr”的声明
-  正在生成代码...
