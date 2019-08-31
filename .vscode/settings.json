@@ -16,7 +16,8 @@
         "deque": "cpp",
         "map": "cpp",
         "bitset": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "iostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

@@ -40,9 +40,9 @@ int main(){
     int L[9] = {8, 6, 7, 9, 1, 3, 2, 5, 4};
     int len = sizeof(L) / sizeof(L[0]);
     MergeSort(L, len);
-    for (auto L : L) {
-        cout << L << endl;
+    for (auto l : L) {
+        cout << l << endl;
     }
-    cin >> len;
+    system("PAUSE");
     return 0;
 }

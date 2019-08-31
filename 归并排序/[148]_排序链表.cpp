@@ -86,7 +86,6 @@ int main() {
         cout << head->val << endl;
         head = head->next;
     }
-    int t;
-    cin >> t;
+    system("pause");
     return 0;
 }
