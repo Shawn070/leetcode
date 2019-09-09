@@ -32,8 +32,8 @@ void heapSort(int* L, int len) {
     
     // 调整大顶堆
     for (int i = len - 1; i >= 1; i--) {
-        swap(L[0], L[i]);   // 将当前最大的放置到数组末尾
-        adjust(L, i, 0);    // 将未完成排序的部分继续进行堆排序
+        swap(L[0], L[i]);   // 将堆顶元素与数组尾元素交换
+        adjust(L, i, 0);    // 调整大顶堆
     }
 }
 
