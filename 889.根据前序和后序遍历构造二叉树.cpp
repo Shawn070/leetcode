@@ -30,6 +30,10 @@ public:
                 break;
             }
         }
+        /*
+        pre: [1,2,4,5,3,6,7], [l1, ... , r1] -> [l1 + 1， l1 + 1 + pos - l2] + [l1 + 1 + pos - l2 + 1, r1]
+        post:[4,5,2,6,7,3,1], [l2, ... , r2] -> [l2, pos] + [pos + 1, r2 - 1]
+        */
         node->left = create(pre, post, l1 + 1, l1 + 1 + pos - l2, l2, pos);
         node->right = create(pre, post, l1 + 1 + pos - l2 + 1, r1, pos + 1,r2 - 1);
 
