@@ -1,0 +1,42 @@
+    1  passwd
+    2  yum install zsh
+    3  yum install wget
+    4  bash <(curl -s -L https::/git.io/v2ray.sh)
+    5  ls
+    6  yum install curl
+    7  bash <(curl -s -L https::/git.io/v2ray.sh)
+    8  curl -s -L https::/git.io/v2ray.sh
+    9  curl
+   10  wget https::/git.io/v2ray.sh
+   11  ls
+   12  wget https:?/git.io/v2ray.sh
+   13  wget https://git.io/v2ray.sh
+   14  ls
+   15  ./v2
+   16  ./v2ray.sh
+   17  bash <(curl -s -L https://git.io/v2ray.sh)
+   18  ping shawn070.cn
+   19  ./v2ray.sh
+   20  bash <(curl -s -L https://git.io/v2ray.sh)
+   21  ps
+   22  bash <(curl -s -L https://git.io/v2ray.sh)
+   23  v2ray
+   24  bash <(curl -s -L https://git.io/v2ray.sh)
+   25  yum install  -y git
+   26  bash <(curl -s -L https://git.io/v2ray.sh)
+   27  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+   28  zsh
+   29  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   30  pwd
+   31  exit
+   32  yum uninstall zsh
+   33  yum remove zsh
+   34  .com/robbyrussell/oh-my-zsh/master/tools/install.sh)"sh -c "$(curl -fsSL https://raw.githubusercontent
+   35  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   36  yum install zsh
+   37  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   38  remove /root/.oh-my-zsh
+   39  rm -rf /root/.oh-my-zsh
+   40  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   41  history
+   42  history > history.txt
